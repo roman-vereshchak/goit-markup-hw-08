@@ -248,7 +248,8 @@ body {
 }
 
 /* ----- QUALITY ----- */
-
+.section-quality {
+}
 
 .quality-list {
   display: flex;
