@@ -1,0 +1,76 @@
+
+@import '../base/hiden';
+
+.quality-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+
+  &__item {
+    margin-bottom: 30px;
+    margin-left: 30px;
+    width: 100%;
+    flex-basis: calc(  ( $mobile - ( $mobile_col * 30px ) ) / $mobile_col );
+  }
+  &__icon {
+    display: flex;
+     // margin-top: 25px; 
+    margin-bottom: 30px;  
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    background: #f5f4fa;
+    border-radius: 4px;
+   
+  }
+
+  &__title {
+    color: $title-text-color;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+
+
+  @include mobile {
+    .quality-list {
+      max-width: $mobile;
+      &__item:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+    @include tablet {
+    .quality-list {
+      max-width: $tablet;
+
+      &__item {
+        flex-basis: calc( ( $tablet - ( $tablet_col * 30px ) ) / $tablet_col );
+        &:nth-last-child(-n+2) {
+           margin-bottom: 0;
+        }
+      }
+     &__title {
+        text-align: left;
+     }
+    }
+  }
+
+  @include desktop {
+    .quality-list {
+      max-width: $desktop;
+    &__item {
+        flex-basis: calc( (100% - ($desctop_col * 30px)) / $desctop_col );
+        margin-bottom: 0;
+      }
+    }
+  }
+}

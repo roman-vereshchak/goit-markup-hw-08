@@ -1,0 +1,114 @@
+/* ----- HERO ------- */
+.hero__title {
+  margin-bottom: 30px;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  @include desktop {
+    font-size: 44px;
+    line-height: calc(60/44);
+  }
+}
+
+.hero-section {
+  padding-top: 118px;
+  padding-bottom: 118px;
+  width: 100%;
+   text-align: center;
+  color: $special-text-color;
+   margin-left: auto;
+   margin-right: auto;
+  max-width: $mobile;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.2)
+    ),
+    url(../../images/mobile.jpg);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #c4c4c4;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero-section {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.2)
+      ),
+      url(../images/mobile2x.jpg);
+  }
+}
+
+  @include mobile {
+  .hero-section {
+    max-width: $mobile;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.2)
+      ),
+      url(../images/tablet.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-section {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.2)
+        ),
+        url(../images/tablet2x.jpg);
+    }
+  }
+}
+
+  @include tablet{
+  .hero-section {
+    max-width: $tablet;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.2)
+      ),
+      url(../images/desktop.jpg);
+  }
+}
+
+  @include desktop {
+  .hero-section {
+    max-width: 1600px;
+    padding-top: 200px;
+      padding-bottom: 200px;
+  }
+}
+
+.button {
+  padding: 10px 24px;
+  min-width: 200px;
+  min-height: 50px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  color: $special-text-color;
+  background-color: $accent-color;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  text-align: center;
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: 4px;
+}

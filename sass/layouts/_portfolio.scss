@@ -1,0 +1,216 @@
+/* --------- PORTFOLIO --------- */
+
+.section {
+  width: 100%;
+  // @include tablet {
+  //  max-width: 480px ;
+  // }
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portfolio-btn {
+  @media screen and (max-width: 767px) {
+    max-width: 330px;
+  }
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+
+  @include tablet {
+    justify-content: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    &__item:nth-child(-n + 3) {
+      margin-bottom: 15px;
+    }
+    &__item:nth-last-child(-n + 2) {
+      margin-bottom: 40px;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    &__item:nth-child(-n + 4) {
+      margin-bottom: 15px;
+    }
+
+    &__item:last-child {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.portfolio-button {
+  display: inline-block;
+  padding: 6px 22px;
+  height: 38px;
+
+  background-color: #f5f4fa;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+  border-radius: 4px;
+  border: 0px;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $special-text-color;
+    background-color: $accent-color;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08),
+      0 3px 1px rgba(0, 0, 0, 0.01);
+  }
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
+
+  @include desktop {
+    margin-bottom: 50px;
+  }
+}
+
+.list-images {
+  // width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -30px;
+  margin-bottom: -30px;
+
+  &__item {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    flex-basis: calc(100% - 30px);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @media screen and (max-width: 767px) {
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    display: block;
+  }
+
+  &__item:hover,
+  &__item:focus {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height:  100%;
+  }
+
+  &__thumb {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 19.15% 6%;
+    font-size: 18px;
+    line-height: 1.56;
+    color: $special-text-color;
+    background: rgba(33, 150, 243, 0.9);
+
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and(max-width:320px) {
+      font-size: 10px;
+    }
+    @media screen and(max-width:400px) {
+      font-size: 14px;
+    }
+    
+    @include tablet {
+      padding: 49px 24px 77px;
+    }
+    @include desktop {
+      padding: 63px 24px;
+    }
+  }
+
+  &__link:hover &__overlay,
+  &__link:focus &__overlay {
+    transform: translateY(0);
+    // transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__border {
+    flex-grow: 1;
+    // width: 100%;
+    padding: 20px 24px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #eeeeee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #eeeeee;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #eeeeee;
+  }
+  &__title {
+    display: block;
+    margin-bottom: 4px;
+    color: $title-text-color;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+  }
+
+  &__text {
+    display: block;
+    font-size: 16px;
+    line-height: 1.88;
+    color: $primary-text-color;
+  }
+
+  @media screen and (max-width: 1199px) {
+    &__item:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include tablet {
+    &__item {
+      flex-basis: calc((100% - 2 * 30px) / 2);
+    }
+    .list-images {
+      margin-top: 30px;
+    }
+  }
+
+  @include desktop {
+    &__item {
+      flex-basis: calc((100% - 3 * 30px) / 3);
+    }
+    &__item:nth-last-child(-n + 3) {
+      margin-bottom: 0;
+    }
+
+    .list-images {
+      margin-top: 50px;
+    }
+  }
+}
